@@ -1,0 +1,40 @@
+
+images1.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+carbody
+  rotate: false
+  xy: 0, 0
+  size: 307, 145
+  orig: 307, 145
+  offset: 0, 0
+  index: -1
+ground
+  rotate: false
+  xy: 309, 0
+  size: 1604, 129
+  orig: 1604, 129
+  offset: 0, 0
+  index: -1
+crate
+  rotate: false
+  xy: 0, 147
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+tyre
+  rotate: false
+  xy: 66, 147
+  size: 63, 64
+  orig: 63, 64
+  offset: 0, 0
+  index: -1
+ball
+  rotate: false
+  xy: 131, 147
+  size: 61, 60
+  orig: 63, 62
+  offset: 1, 1
+  index: -1

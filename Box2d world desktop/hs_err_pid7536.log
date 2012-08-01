@@ -1,0 +1,183 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x198700f7, pid=7536, tid=5340
+#
+# JRE version: 6.0_20-b02
+# Java VM: Java HotSpot(TM) Client VM (16.3-b01 mixed mode windows-x86 )
+# Problematic frame:
+# C  [atioglxx.dll+0x900f7]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01e17800):  JavaThread "LWJGL Application" [_thread_in_native, id=5340, stack(0x19790000,0x197e0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000007
+
+Registers:
+EAX=0x00000000, EBX=0x1a667060, ECX=0x1a651f20, EDX=0x00000000
+ESP=0x197d97d8, EBP=0x00000000, ESI=0x602a2ad0, EDI=0x1a651f20
+EIP=0x198700f7, EFLAGS=0x00010216
+
+Top of Stack: (sp=0x197d97d8)
+0x197d97d8:   00000000 00000000 1987c84c 1a651f20
+0x197d97e8:   00000000 197d9804 6eb70f80 00000000
+0x197d97f8:   1bdf73c8 1a667060 19d703d2 00000000
+0x197d9808:   00000000 00000000 19d703e8 00000000
+0x197d9818:   00000000 00000000 1a667060 1bdf73d0
+0x197d9828:   1bdf73c8 1bdf73cc 00000000 19de3001
+0x197d9838:   1a667060 1bdf73c8 1bdf73cc 1bdf73d0
+0x197d9848:   00000013 197d9870 197dc750 00000001 
+
+Instructions: (pc=0x198700f7)
+0x198700e7:   cc cc cc cc cc cc cc cc cc 8b 4c 24 04 83 ec 08
+0x198700f7:   80 78 07 62 56 8b 74 24 18 57 75 0f e8 78 15 00 
+
+
+Stack: [0x19790000,0x197e0000],  sp=0x197d97d8,  free space=125197d92bck
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [atioglxx.dll+0x900f7]
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  org.lwjgl.opengl.GL11.nglBindTexture(IIJ)V
+J  com.badlogic.gdx.graphics.g2d.SpriteBatch.renderMesh()V
+J  com.badlogic.gdx.graphics.g2d.SpriteBatch.switchTexture(Lcom/badlogic/gdx/graphics/Texture;)V
+J  com.badlogic.gdx.graphics.g2d.SpriteBatch.draw(Lcom/badlogic/gdx/graphics/Texture;[FII)V
+J  com.box2d.main.TexWrapper.load_texture(Lcom/badlogic/gdx/graphics/g2d/SpriteBatch;)V
+J  com.box2d.main.Rectangle.load_texture(Lcom/badlogic/gdx/graphics/g2d/SpriteBatch;)V
+J  com.box2d.main.ObjectManager.load_texture()V
+J  com.box2d.main.Game.render()V
+j  com.badlogic.gdx.backends.lwjgl.LwjglApplication.mainLoop()V+461
+j  com.badlogic.gdx.backends.lwjgl.LwjglApplication$1.run()V+27
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x01e18000 JavaThread "DestroyJavaVM" [_thread_blocked, id=6416, stack(0x00430000,0x00480000)]
+=>0x01e17800 JavaThread "LWJGL Application" [_thread_in_native, id=5340, stack(0x19790000,0x197e0000)]
+  0x01e17400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=7336, stack(0x18910000,0x18960000)]
+  0x01e22800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=8152, stack(0x18880000,0x188d0000)]
+  0x01e16c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=1448, stack(0x187f0000,0x18840000)]
+  0x01e16800 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6608, stack(0x18760000,0x187b0000)]
+  0x01de9c00 JavaThread "Finalizer" daemon [_thread_blocked, id=5556, stack(0x186d0000,0x18720000)]
+  0x01de5400 JavaThread "Reference Handler" daemon [_thread_blocked, id=6088, stack(0x18640000,0x18690000)]
+
+Other Threads:
+  0x01de2800 VMThread [stack: 0x185b0000,0x18600000] [id=7688]
+  0x01e30c00 WatcherThread [stack: 0x189a0000,0x189f0000] [id=7744]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 14016K, used 11721K [0x04510000, 0x05440000, 0x09a60000)
+  eden space 12480K,  85% used [0x04510000, 0x04f87c28, 0x05140000)
+  from space 1536K,  65% used [0x052c0000, 0x053baa20, 0x05440000)
+  to   space 1536K,   0% used [0x05140000, 0x05140000, 0x052c0000)
+ tenured generation   total 31004K, used 19426K [0x09a60000, 0x0b8a7000, 0x14510000)
+   the space 31004K,  62% used [0x09a60000, 0x0ad589c8, 0x0ad58a00, 0x0b8a7000)
+ compacting perm gen  total 12288K, used 4791K [0x14510000, 0x15110000, 0x18510000)
+   the space 12288K,  38% used [0x14510000, 0x149bdf00, 0x149be000, 0x15110000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x00424000 	C:\Program Files (x86)\Java\jre6\bin\javaw.exe
+0x777d0000 - 0x77950000 	C:\Windows\SysWOW64\ntdll.dll
+0x75690000 - 0x75790000 	C:\Windows\syswow64\kernel32.dll
+0x771e0000 - 0x77226000 	C:\Windows\syswow64\KERNELBASE.dll
+0x72ac0000 - 0x72af7000 	C:\Program Files\AVAST Software\Avast\snxhk.dll
+0x75960000 - 0x75a00000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75790000 - 0x7583c000 	C:\Windows\syswow64\msvcrt.dll
+0x76ef0000 - 0x76f09000 	C:\Windows\SysWOW64\sechost.dll
+0x76040000 - 0x76130000 	C:\Windows\syswow64\RPCRT4.dll
+0x75340000 - 0x753a0000 	C:\Windows\syswow64\SspiCli.dll
+0x75330000 - 0x7533c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x76fa0000 - 0x770a0000 	C:\Windows\syswow64\USER32.dll
+0x75ae0000 - 0x75b70000 	C:\Windows\syswow64\GDI32.dll
+0x76d80000 - 0x76d8a000 	C:\Windows\syswow64\LPK.dll
+0x75a40000 - 0x75add000 	C:\Windows\syswow64\USP10.dll
+0x77260000 - 0x772c0000 	C:\Windows\system32\IMM32.DLL
+0x75890000 - 0x7595c000 	C:\Windows\syswow64\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jre6\bin\msvcr71.dll
+0x6d800000 - 0x6da97000 	C:\Program Files (x86)\Java\jre6\bin\client\jvm.dll
+0x74da0000 - 0x74dd2000 	C:\Windows\system32\WINMM.dll
+0x71c30000 - 0x71c7b000 	C:\Windows\system32\apphelp.dll
+0x6d7b0000 - 0x6d7bc000 	C:\Program Files (x86)\Java\jre6\bin\verify.dll
+0x6d330000 - 0x6d34f000 	C:\Program Files (x86)\Java\jre6\bin\java.dll
+0x6d290000 - 0x6d298000 	C:\Program Files (x86)\Java\jre6\bin\hpi.dll
+0x75d10000 - 0x75d15000 	C:\Windows\syswow64\PSAPI.DLL
+0x6d7f0000 - 0x6d7ff000 	C:\Program Files (x86)\Java\jre6\bin\zip.dll
+0x69080000 - 0x690e3000 	C:\Users\aitch_nu\AppData\Local\Temp\libgdxaitch_nu\3593929314\gdx.dll
+0x18bf0000 - 0x18c63000 	C:\Users\aitch_nu\AppData\Local\Temp\libgdxaitch_nu\3593929314\lwjgl.dll
+0x72b90000 - 0x72d2e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7600.16385_none_421189da2b7fabfc\COMCTL32.dll
+0x75580000 - 0x755d7000 	C:\Windows\syswow64\SHLWAPI.dll
+0x675b0000 - 0x67678000 	C:\Windows\system32\OPENGL32.dll
+0x72580000 - 0x725a2000 	C:\Windows\system32\GLU32.dll
+0x66a30000 - 0x66b17000 	C:\Windows\system32\DDRAW.dll
+0x72740000 - 0x72746000 	C:\Windows\system32\DCIMAN32.dll
+0x753e0000 - 0x7557d000 	C:\Windows\syswow64\SETUPAPI.dll
+0x75a10000 - 0x75a37000 	C:\Windows\syswow64\CFGMGR32.dll
+0x77340000 - 0x773cf000 	C:\Windows\syswow64\OLEAUT32.dll
+0x76d90000 - 0x76eec000 	C:\Windows\syswow64\ole32.dll
+0x755e0000 - 0x755f2000 	C:\Windows\syswow64\DEVOBJ.dll
+0x746d0000 - 0x746e3000 	C:\Windows\system32\dwmapi.dll
+0x73b80000 - 0x73b89000 	C:\Windows\system32\VERSION.dll
+0x18d70000 - 0x18dd1000 	C:\Users\aitch_nu\AppData\Local\Temp\libgdxaitch_nu\3593929314\OpenAL32.dll
+0x76130000 - 0x76d79000 	C:\Windows\syswow64\SHELL32.dll
+0x71bb0000 - 0x71c30000 	C:\Windows\system32\uxtheme.dll
+0x18e80000 - 0x18e8d000 	C:\Program Files (x86)\MMX310G 3G USB Manager\Driver\modemInst.dll
+0x76f10000 - 0x76f93000 	C:\Windows\syswow64\CLBCatQ.DLL
+0x742e0000 - 0x743d5000 	C:\Windows\System32\PROPSYS.dll
+0x77230000 - 0x7725d000 	C:\Windows\syswow64\WINTRUST.dll
+0x75f20000 - 0x7603c000 	C:\Windows\syswow64\CRYPT32.dll
+0x753a0000 - 0x753ac000 	C:\Windows\syswow64\MSASN1.dll
+0x6b040000 - 0x6b0b2000 	C:\Windows\system32\dsound.dll
+0x6b010000 - 0x6b035000 	C:\Windows\system32\POWRPROF.dll
+0x67a40000 - 0x67a79000 	C:\Windows\System32\MMDevApi.dll
+0x679b0000 - 0x679e6000 	C:\Windows\system32\AUDIOSES.DLL
+0x197e0000 - 0x1a46f000 	C:\Windows\system32\atioglxx.dll
+0x75cd0000 - 0x75d05000 	C:\Windows\syswow64\WS2_32.dll
+0x75a00000 - 0x75a06000 	C:\Windows\syswow64\NSI.dll
+0x1a4e0000 - 0x1a513000 	C:\Windows\system32\atiadlxy.dll
+0x1a520000 - 0x1a558000 	C:\Program Files\WIDCOMM\Bluetooth Software\SysWOW64\BtMmHook.dll
+0x6af90000 - 0x6b009000 	C:\Windows\system32\mscms.dll
+0x73b50000 - 0x73b67000 	C:\Windows\system32\USERENV.dll
+0x73b40000 - 0x73b4b000 	C:\Windows\system32\profapi.dll
+0x72540000 - 0x72578000 	C:\Windows\system32\icm32.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: com.box2d.desktop.Main
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;\;C:\Program Files (x86)\Sony\VAIO Startup Setting Tool;c:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\doxygen\bin;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;C:\android-ndk-r8;C:\Program Files (x86)\Nmap;C:\Program Files (x86)\OpenVPN\bin;C:\eclipse\eclipse;
+USERNAME=aitch_nu
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 37 Stepping 5, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7600 
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 37 stepping 5, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 4044900k(626964k free), swap 8087900k(2662964k free)
+
+vm_info: Java HotSpot(TM) Client VM (16.3-b01) for windows-x86 JRE (1.6.0_20-b02), built on Apr 12 2010 13:52:23 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Thu Jun 07 15:43:38 2012
+elapsed time: 112 seconds
+
