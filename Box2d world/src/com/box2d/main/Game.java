@@ -30,10 +30,10 @@ public class Game implements ApplicationListener
 	@Override
 	public void create()
 	{
-		if (!Gdx.app.getGraphics().isGL20Available())
-		{
-			throw new GdxRuntimeException("GLES2 Not Available!");
-		}
+//		if (!Gdx.app.getGraphics().isGL20Available())
+//		{
+//			throw new GdxRuntimeException("GLES2 Not Available!");
+//		}
 		gravity = new Vector2(0, -10);
 		myworld = new World(gravity, true);
 		objmanager = new ObjectManager(myworld);
@@ -59,11 +59,11 @@ public class Game implements ApplicationListener
 				GlobalSettings.SCREEN_WIDTH * 0.5f, 500, 0, 0, 40, "",
 				"images/crate.png", "", 64, 64);
 		objmanager.objects.add(box);
-		car = new Car(myworld, 0, BodyType.DynamicBody, 10, 0.3f, 0,
-				GlobalSettings.SCREEN_WIDTH * 0.66f, 500, 0, 0, 0, "",
-				"images/carbody.png", "", "carbody.png", "images/carbody", 307,
-				145);
-		objmanager.objects.add(car);
+//		car = new Car(myworld, 0, BodyType.DynamicBody, 10, 0.3f, 0,
+//				GlobalSettings.SCREEN_WIDTH * 0.66f, 500, 0, 0, 0, "",
+//				"images/carbody.png", "", "carbody.png", "images/carbody", 307,
+//				145);
+//		objmanager.objects.add(car);
 		input = new InputHandler();
 		Gdx.input.setInputProcessor(input);
 		debugger = new Box2DDebugRenderer(true, true, true, true);
