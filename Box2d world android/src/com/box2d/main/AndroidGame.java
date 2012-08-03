@@ -36,13 +36,12 @@ public class AndroidGame extends AndroidApplication {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		Log.d("hello","world");
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, 
                         WindowManager.LayoutParams.FLAG_FULLSCREEN);
   		getWindow().clearFlags(
   				WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-  		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+  		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		initialize(new Game(), config);
     }
 }

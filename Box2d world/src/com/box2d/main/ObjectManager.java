@@ -2,7 +2,10 @@ package com.box2d.main;
 
 import java.util.ArrayList;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.physics.box2d.World;
 
 public class ObjectManager
@@ -12,7 +15,6 @@ public class ObjectManager
 	
 	static World world;
 	public ArrayList<BaseObject> objects;
-	private SpriteBatch batch;
 
 	public static float to_box(float x)
 	{
@@ -38,15 +40,14 @@ public class ObjectManager
 			}
 	}
 	
-	public void load_texture()
+	public void load_texture(SpriteBatch batch)
 	{
-		batch = new SpriteBatch();
-		batch.begin();
+		//batch = new SpriteBatch();
+		//batch.begin();
 		for(BaseObject obj:objects)
 		{
 			obj.load_texture(batch);
 		}
-		batch.end();
 	}
 }
 

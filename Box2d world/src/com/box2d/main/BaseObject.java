@@ -15,7 +15,8 @@ public class BaseObject
 	public TexWrapper texwrap;
 	public int collisionGroup;
 	public FixtureDef fixtureDef;
-
+	public Vector2 smoothPos;
+	public float smoothAngle;
 	public BaseObject(World myworld,int collisionGp,BodyType bodyType,float density,
 			float restitution,float friction,float px,float py,float vx,float vy,float angle,String textag,String texfile,String texdir)
 	{
@@ -27,6 +28,8 @@ public class BaseObject
 		BodyDef.linearVelocity.set(new Vector2(vx,vy));
 		BodyDef.angle=angle;
 		body = world.createBody(BodyDef);
+		smoothPos=new Vector2(vx,vy);
+		smoothAngle=angle;
 		fixtureDef=new FixtureDef();
  		fixtureDef.density=density;
  		fixtureDef.restitution=restitution;

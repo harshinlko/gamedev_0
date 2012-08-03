@@ -36,8 +36,10 @@ public class Circle extends BaseObject
 	@Override
 	public void update()
 	{
-		texwrap.dstX=(int)(ObjectManager.to_world(body.getPosition().x)-texwrap.destWidth/2);
-		texwrap.dstY=(int)(ObjectManager.to_world(body.getPosition().y)-texwrap.destHeight/2);
+//		texwrap.dstX=(int)(ObjectManager.to_world(body.getPosition().x)-texwrap.destWidth/2);
+//		texwrap.dstY=(int)(ObjectManager.to_world(body.getPosition().y)-texwrap.destHeight/2);
+		texwrap.dstX=(int)(ObjectManager.to_world(smoothPos.x)-texwrap.destWidth/2);
+		texwrap.dstY=(int)(ObjectManager.to_world(smoothPos.y)-texwrap.destHeight/2);
 
 		texwrap.angle=body.getAngle();
 		texwrap.originX=radius;

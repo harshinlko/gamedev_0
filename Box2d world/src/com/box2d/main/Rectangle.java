@@ -36,8 +36,10 @@ public class Rectangle extends BaseObject
 	@Override
 	public void update()
 	{
-		texwrap.dstX=(int)(ObjectManager.to_world(body.getPosition().x)-width/2);
-		texwrap.dstY=(int)(ObjectManager.to_world(body.getPosition().y)-height/2);
+//		texwrap.dstX=(int)(ObjectManager.to_world(body.getPosition().x)-width/2);
+//		texwrap.dstY=(int)(ObjectManager.to_world(body.getPosition().y)-height/2);
+		texwrap.dstX=(int)(ObjectManager.to_world(smoothPos.x)-width/2);
+		texwrap.dstY=(int)(ObjectManager.to_world(smoothPos.y)-height/2);
 		texwrap.destWidth=width;
 		texwrap.destHeight=height;
 		texwrap.angle=body.getAngle();
